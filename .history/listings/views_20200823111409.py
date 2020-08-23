@@ -4,10 +4,10 @@ from .models import Listing
 
 # Create your views here.
 def index(request):
-    listings = Listing.objects.order_by('-list_date').filter(is_published=True)
+    listings = Listing.objects.all()
     paginator = Paginator(listings, 1)
     page = request.GET.get('page')
-    page_listings = paginator.get_page(page)
+    page_listings = Paginator.get_page(page)
     context = {'listings': page_listings}
     return render(request, 'listings/listings.html', context)
 

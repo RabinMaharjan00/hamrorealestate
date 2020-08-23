@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from listings.models import Listing
-from realtors.models import Realtor
 
 # Create your views here.
 def index(request):
@@ -10,8 +9,6 @@ def index(request):
     return render(request, 'pages/index.html', context)
 
 def about(request):
-    realtors = Realtor.objects.order_by('-hire_date')
-    context = {'realtors': realtors}
-    return render(request, 'pages/about.html', context)
+    return render(request, 'pages/about.html')
 
 
