@@ -7,5 +7,5 @@ local_settings.py
 db.sqlite3
 db.sqlite3-journal
 /media
-realestate_project-env
+/realestate_project-env
 /static
