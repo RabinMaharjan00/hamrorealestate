@@ -1,3 +1,21 @@
+:root {
+  --logo-font: "Segoe UI", "Roboto", "Oxygen","Droid Sans", "Helvetica Neue",
+  sans-serif;
+  --header-font: "Raleway", sans-serif;
+  --core-font: "Merriweather Sans", sans-serif;
+
+  --ui-shawdow: 0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+  fill: rgba(46, 24, 24, 0);
+  --ui-shawdow-border: 4px solid rgba(0, 0, 0, 0);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
 .btn-secondary {
   color: #fff !important; }
 
@@ -7,15 +25,33 @@ img {
 .logo {
   width: 80px; }
 
-.navbar {
-  opacity: 0.9;
-  text-transform: uppercase; }
 
 .social a {
   margin-right: 0.4rem; }
 
+  .Banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    width: 100%;
+  
+    border-radius: 1px;
+    font-size: 1.2rem;
+  
+    overflow: hidden;
+    background: white;
+    padding: 10px;
+  
+    font-family: var(--logo-font);
+  
+    border-bottom: var(--ui-shawdow-border);
+    box-shadow: var(--ui-shawdow);
+  }
+
 #showcase {
-  background: url(../img/showcase.jpg) no-repeat top center fixed !important;
+  background: url(../img/showcase.jpg) no-repeat top center fixed/cover;
   position: relative;
   min-height: 650px;
   color: #fff;
@@ -94,3 +130,40 @@ img {
     font-size: 30px; }
   #showcase-inner h1 {
     font-size: 40px; } }
+
+    .carousel-item {
+      height: 100vh;
+      min-height: 350px;
+      background: no-repeat center center scroll;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+@media (max-width: 800px) {
+  .carousel-item, .carousel-item > img {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+}
+
+
+@media (min-width: 800px) {
+  .carousel-item, .carousel-item > img {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+}

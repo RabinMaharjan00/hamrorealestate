@@ -2,7 +2,8 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Hamro Real Estate</title>
+    <title>Hamro Real Estate {% block title %}
+    {% endblock  %}</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,6 +14,7 @@
     <link rel="stylesheet" href="{% static 'css/all.css'%}">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+    <script src="{% static 'js/jquery-3.3.1.min.js' %} "></script>
     <!-- Custom -->
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
 
@@ -20,6 +22,8 @@
      <link rel="stylesheet" href="{%static 'css/lightbox.min.css'%}">
   </head>
   <body>
+
+  {% include 'partial/_topbar.html' %}
 
   {% comment %} Nav bar {% endcomment %}
   {% include 'partial/_navbar.html' %}
@@ -31,9 +35,9 @@
    {% comment %} footer {% endcomment %}
   {% include 'partial/_footer.html' %}
 
-  <script src="{% static 'js/jquery-3.3.1.min.js'%} "></script>
-  <script src="{% static 'js/bootstrap.bundle.min.js'%} "></script>
-   <script src="{% static 'js/lightbox.min.js'%} "></script>
-  <script src="{% static 'js/main.js'%} "></script>
+  <script src="{% static 'js/jquery-3.3.1.min.js' %} "></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %} "></script>
+   <script src="{% static 'js/lightbox.min.js' %} "></script>
+  <script src="{% static 'js/main.js' %} "></script>
   </body>
 </html>
