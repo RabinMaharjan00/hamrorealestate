@@ -39,6 +39,19 @@
         <div class="col-md-9">
           <!-- Home Main Image -->
           <img src="{{listing.photo_main.url}}" alt="" class="img-main img-fluid mb-3">
+          {% if listing.for_rent %}
+          <div class="card-img-overlay">
+              <h2>
+                <span class="badge badge-danger text-white">Rent</span>
+              </h2>
+            </div>
+            {% else %}
+            <div class="card-img-overlay">
+              <h2>
+                <span class="badge badge-secondary text-white">Sale</span>
+              </h2>
+            </div>
+          {% endif %}
           <!-- Thumbnails -->
           <div class="row mb-5 thumbs">
           {% if listing.photo_1 %}

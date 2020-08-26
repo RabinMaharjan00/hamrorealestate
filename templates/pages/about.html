@@ -7,7 +7,6 @@
       <div class="row text-center">
         <div class="col-md-12">
           <h1 class="display-4">About Hamro Real Estate</h1>
-          <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, pariatur!</p>
         </div>
       </div>
     </div>
@@ -30,16 +29,19 @@
 
   <section id="about" class="py-4">
     <div class="container">
+    {% if about %}
+    {% for hamro in about %}
       <div class="row">
-        <div class="col-md-8">
-          <h2>We Search For The Perfect Home</h2>
-          <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, pariatur!</p>
-          <img src="{% static 'img/about.jpg'%}" alt="">
-          <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis esse officia repudiandae ad saepe ex, amet
-            neque quod accusamus rem quia magnam magni dolorum facilis ullam minima perferendis? Exercitationem at quaerat
-            commodi id libero eveniet harum perferendis laborum molestias quia.</p>
+        <div class="col-md-6">
+          <h2>{{hamro.name}}</h2>
+          <p class="mt-4 lead">{{ hamro.description }}</p>
+        </div>
+        <div class="col-md-6 ml-auto">
+        <img src="{{ hamro.photo.url }}" alt="" class="img-fluid h-100">
         </div>
       </div>
+      {% endfor %}
+      {% endif %}
     </div>
   </section>
 
