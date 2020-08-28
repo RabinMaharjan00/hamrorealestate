@@ -52,7 +52,7 @@ img {
   position: relative;
   min-height: 650px;
   color: #fff;
-  padding-top: 6rem; }
+  padding-top: 10rem; }
   #showcase .home-search {
     min-height: 400px;
     position: relative;
@@ -176,7 +176,7 @@ img {
     background-size: cover;
   }
   #showcase .overlay  {
-    height: 90vh;
+    height: 640px;
     max-height: fit-content;
     margin-top: 0px;
     padding-top: 0px;
@@ -184,6 +184,25 @@ img {
   button[type="submit"] {
     width: fit-content;
     text-align: center;
+  }
+  .form-group {
+    width: auto;
+  }
+}
+@media (min-width: 400px) {
+  .carousel-item, .carousel-item > img {
+    height: 100vh;
+    min-height: fit-content;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  #showcase .overlay  {
+    max-height: fit-content;
+    margin-top: 0px;
+    padding-top: 0px;
   }
   .form-group {
     width: auto;
