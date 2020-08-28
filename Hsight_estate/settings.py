@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig',
-    'contacts.apps.ContactsConfig'
+    'contacts.apps.ContactsConfig',
+    'lands.apps.LandsConfig'
 ]
 
 MIDDLEWARE = [
@@ -82,7 +83,7 @@ WSGI_APPLICATION = 'Hsight_estate.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Hamro_estate',
+        'NAME': 'hamrorealestate',
         'USER': 'postgres',
         'PASSWORD': 'samsungj7!@#',
         'HOST': 'localhost'
@@ -144,6 +145,6 @@ MESSAGE_TAGS = {
 
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'your email'
-EMAIL_HOST_PASSWORD='password'
+EMAIL_HOST_USER = 'rabin.maharjan0015@gmail.com'
+EMAIL_HOST_PASSWORD='xobsoivllsdkwrkf'
 EMAIL_USE_TLS = True

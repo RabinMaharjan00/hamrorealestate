@@ -36,11 +36,33 @@
       <div class="col-md-6 col-lg-4 mb-4">
           <div class="card listing-preview">
             <img class="card-img-top" src="{{listing.photo_main.url}}" alt="">
+            {% if listing.for_sale %}
             <div class="card-img-overlay">
               <h2>
-                <span class="badge badge-secondary text-white">${{listing.price | intcomma}}</span>
+                <span class="badge badge-secondary text-white">Sale</span>
               </h2>
             </div>
+            {% else %}
+            <div class="card-img-overlay">
+              <h2>
+                <span class="badge badge-danger text-white">Rent</span>
+              </h2>
+            </div>
+            {% endif %}
+             {% if listing.for_sale %}
+            <div class="card-text pl-3">
+              <h2>
+                <span class="badge badge-secondary text-white">Rs. {{listing.price | intcomma}}</span>
+              </h2>
+            </div>
+            {% else %}
+            <div class="card-text pl-3">
+              <h2>
+                <span class="badge badge-danger text-white">Rs. {{listing.price | intcomma}}</span>
+              </h2>
+            </div>
+            
+            {% endif %}
             <div class="card-body">
               <div class="listing-heading text-center">
                 <h4 class="text-primary">{{listing.title}}</h4>

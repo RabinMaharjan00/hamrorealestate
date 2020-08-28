@@ -39,19 +39,6 @@
         <div class="col-md-9">
           <!-- Home Main Image -->
           <img src="{{listing.photo_main.url}}" alt="" class="img-main img-fluid mb-3">
-          {% if listing.for_rent %}
-          <div class="card-img-overlay">
-              <h2>
-                <span class="badge badge-danger text-white">Rent</span>
-              </h2>
-            </div>
-            {% else %}
-            <div class="card-img-overlay">
-              <h2>
-                <span class="badge badge-secondary text-white">Sale</span>
-              </h2>
-            </div>
-          {% endif %}
           <!-- Thumbnails -->
           <div class="row mb-5 thumbs">
           {% if listing.photo_1 %}
@@ -103,7 +90,7 @@
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-secondary">
                   <i class="fas fa-money-bill-alt"></i> Asking Price:
-                  <span class="float-right">${{listing.price | intcomma}}</span>
+                  <span class="float-right">Rs. {{listing.price | intcomma}}</span>
                 </li>
                 <li class="list-group-item text-secondary">
                   <i class="fas fa-bed"></i> Bedrooms:
@@ -140,8 +127,6 @@
                   <span class="float-right">{{listing.realtor}}
                   </span>
                 </li>
-
-
               </ul>
             </div>
           </div>
@@ -159,6 +144,7 @@
             <div class="card-body">
               <h5 class="card-title">Property Realtor</h5>
               <h6 class="text-secondary">{{listing.realtor}}</h6>
+              <h6 class="text-secondary">Contact: {{listing.realtor.phone}}</h6>
             </div>
           </div>
           <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Make An Inquiry</button>

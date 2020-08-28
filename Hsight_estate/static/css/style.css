@@ -49,7 +49,6 @@ img {
   }
 
 #showcase {
-  background: url(../img/showcase.jpg) no-repeat top center fixed/cover;
   position: relative;
   min-height: 650px;
   color: #fff;
@@ -165,3 +164,32 @@ img {
   }
 
 }
+
+@media (max-width: 400px) {
+  .carousel-item, .carousel-item > img {
+    height: 100vh;
+    min-height: fit-content;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  #showcase .overlay  {
+    height: 90vh;
+    max-height: fit-content;
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+  button[type="submit"] {
+    width: fit-content;
+    text-align: center;
+  }
+  .form-group {
+    width: auto;
+  }
+}
+
+/* img.card-img-top.img-height {
+  height: 380px;
+} */

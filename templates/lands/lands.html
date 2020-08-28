@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block title %} | Browse Lands{% endblock  %}
+{% block content %}
+<section id="showcase-inner" class="py-5 text-white">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1 class="display-4">Lands</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Breadcrumb -->
+  <section id="bc" class="mt-3">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{% url 'index' %}">
+              <i class="fas fa-home"></i> Home</a>
+          </li>
+          <li class="breadcrumb-item active"> Browse Lands</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <section id="listings" class="py-4">
+    <div class="container">
+      <div class="row">
+      {% if land_listings %}
+      {% for land_listing in land_listings %}
+        <!-- Listing 1 -->
+        <div class="col-md-6 col-lg-4 mb-4" style="width: 18rem;">
+          <div class="card listing-preview">
+            <img class="card-img-top img-height" src="{{ land_listing.photo_main.url }}" alt="">
+            <div class="card-img-overlay">
+              <h2>
+                <span class="badge badge-secondary text-white">Rs. {{land_listing.price | intcomma   }}</span>
+              </h2>
+            </div>
+            <div class="card-body">
+              <div class="listing-heading text-center">
+                <h4 class="text-primary">{{ land_listing.title }}</h4>
+                <p>
+                  <i class="fas fa-map-marker text-secondary"></i>{{ land_listing.city }}, {{ land_listing.address }}</p>
+                  <p class="text-center">contact: {{land_listing.realtor.phone}}</p>
+              </div>
+              <hr>
+              <a href = "{% url 'land' land_listing.id %}" class="btn btn-primary btn-block">More Info</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="col-md-12">
+      <p>No Listings available</p>
+      </div>
+        {% endif %}
+    </div>
+</div>
+</section>
+{% endblock  %}
