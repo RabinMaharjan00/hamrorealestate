@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from listings.models import Listing
 from listings.choices import price_choices, bedroom_choices, state_choices
 from realtors.models import Realtor
-from .models import About
+from .models import CompanyInfo
 
 # Create your views here.
 def index(request):
@@ -17,10 +17,15 @@ def index(request):
     return render(request, 'pages/index.html', context)
 
 def about(request):
-    about = About.objects.all()
+    about = CompanyInfo.objects.all()
     realtors = Realtor.objects.order_by('-hire_date')
     context = {'realtors': realtors,
-                'about': about}
+                'about': about
+                }
     return render(request, 'pages/about.html', context)
 
 
+def agent(request):
+    realtors = Realtor.objects.order_by('-hire_date')
+    context = {'realtors': realtors}
+    return render(request, 'pages/agents.html', context)
