@@ -33,7 +33,9 @@ static %} {% block content %}
         <p class="mt-4 lead">{{ hamro.description }}</p>
       </div>
       <div class="col-md-6 ml-auto">
+      {% if realtor.photo %}
         <img src="{{ hamro.photo.url }}" alt="" class="img-fluid h-100" />
+      {% endif %}
       </div>
     </div>
     {% endfor %} {% endif %}
@@ -60,7 +62,9 @@ static %} {% block content %}
     <div class="row text-center">
       {% if realtors %} {% for realtor in realtors %}
       <div class="col-md-4">
+      {% if realtor.photo %}
         <img src="{{realtor.photo.url}}" alt="" class="rounded-circle mb-3" />
+      {% endif %}
         <h4>{{realtor.name}}</h4>
         <p class="text-success">
           <i class="fas fa-award text-success mb-3"></i> Realtor
