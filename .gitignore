@@ -9,3 +9,6 @@ db.sqlite3-journal
 /media
 /realestate_project-env
 /static
+/.gitignore
+rootCA.key
+rootCA.pem
