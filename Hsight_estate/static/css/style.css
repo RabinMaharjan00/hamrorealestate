@@ -201,4 +201,14 @@ img {
     width: 200px;
     height: 200px;
   }
+  #showcase .overlay {
+     min-height: 400px;
+     width: 100%;
+  }
+}
+@media (max-width:300px) {
+  #showcase .overlay {
+     max-height: 600px;
+     width: 100%;
+  }
 }

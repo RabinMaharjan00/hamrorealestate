@@ -8,6 +8,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Find your best homes and lands with us with affordable price">
+    <meta name="keywords" content="Real estate, homes, lands, affordable price">
     <link rel = "icon" href="{% static 'img/real_estate.png'%}"
         type = "image/x-icon"> 
   <!-- Font Awesome -->
@@ -40,5 +42,22 @@
   <script src="{% static 'js/bootstrap.bundle.min.js' %} "></script>
    <script src="{% static 'js/lightbox.min.js' %} "></script>
   <script src="{% static 'js/main.js' %} "></script>
+  <script src="{% static 'dist/jquery.watermark.min.js' %}" ></script>
+  <script>
+$(function() {
+  $('.img_awesome').watermark({
+    text: 'Hamro Real Estate',
+    textWidth: 5000,
+    gravity: 'n',
+    opacity: 0.5,
+    margin: 12,
+    textSize: 100,
+    textColor: 'white',
+    textBg:'rgba(0, 0, 0, 0.4)',
+  });
+});
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+  </script>
   </body>
 </html>

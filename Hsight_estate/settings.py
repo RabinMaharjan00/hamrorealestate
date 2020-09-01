@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig',
     'contacts.apps.ContactsConfig',
-    'lands.apps.LandsConfig'
+    'lands.apps.LandsConfig',
 ]
 
 MIDDLEWARE = [

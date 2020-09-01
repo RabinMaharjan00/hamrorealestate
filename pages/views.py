@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from listings.models import Listing
+from lands.models import Land
 from listings.choices import state_choices
 from listings.choices import search_choices
 from realtors.models import Realtor
@@ -8,9 +8,9 @@ from .models import About
 
 # Create your views here.
 def index(request):
-    listings = Listing.objects.order_by('-list_date').filter(is_published=True)[:3]
+    lands = Land.objects.order_by('-list_date').filter(is_published=True)[:3]
     context = {
-        'listings': listings,
+        'lands': lands,
         'state_choices': state_choices,
         'search_choices': search_choices
         }
