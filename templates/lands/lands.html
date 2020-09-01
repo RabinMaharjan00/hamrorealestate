@@ -1,29 +1,29 @@
-{% extends 'base.html' %} {% load humanize %} {% block title %} | Browse Lands
+{% extends 'base.html' %} {% load humanize %} {% block title %} | Lands
 {%endblock %} {% block content %}
+
 <section id="showcase-inner" class="py-5 text-white">
-  <div class="container">
-    <div class="row text-center">
-      <div class="col-md-12">
-        <h1 class="display-4">Lands</h1>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1 class="display-4">Lands</h1>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Breadcrumb -->
-<section id="bc" class="mt-3">
-  <div class="container">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="{% url 'index' %}"> <i class="fas fa-home"></i> Home</a>
-        </li>
-        <li class="breadcrumb-item active">Browse Lands</li>
-      </ol>
-    </nav>
-  </div>
-</section>
-
+  </section>
+  <section id="bc" class="mt-3">
+    <div class="container">
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{% url 'index' %}">Home</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="{% url 'lands' %}">Lands</a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </section>
 <section id="listings" class="py-4">
   <div class="container">
     <div class="row">
@@ -39,7 +39,7 @@
           <div class="card-img-overlay">
             <h2>
               <span class="badge badge-secondary text-white"
-                >Rs. {{land_listing.price | intcomma }}</span
+                >Rs. {{land_listing.price_per_anna | intcomma }}</span
               >
             </h2>
           </div>
@@ -47,11 +47,11 @@
             <div class="listing-heading text-center">
               <h4 class="text-primary">{{ land_listing.title }}</h4>
               <p>
-                <i class="fas fa-map-marker text-secondary"></i>
+                <i class="fas fa-map-marker text-dark"></i>
                 {{ land_listing.city }}, {{ land_listing.address }}
               </p>
               <p>
-                <i class="fas fa-phone text-secondary"></i>contact:
+                <i class="fas fa-phone text-dark"></i>contact:
                 {{land_listing.realtor.phone}}
               </p>
             </div>

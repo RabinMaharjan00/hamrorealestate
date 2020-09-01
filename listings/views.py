@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.shortcuts import render, get_object_or_404, redirect
+from django.core.paginator import Paginator
 from .models import Listing
 from listings.choices import state_choices
+from lands.views import search_land
 
 # Create your views here.
 def index(request):
@@ -46,3 +47,10 @@ def search(request):
         'values': request.GET
         }
      return render(request, 'listings/search.html', context)
+
+
+
+    
+             
+
+
